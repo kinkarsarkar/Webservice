@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b77e26d6-a3df-4d38-b0b0-cb39cf1d3909" activeEnvironment="Default" name="PaymentTibco" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9fd5447a-5539-4ac4-aa01-300929f695ea" wsaVersion="NONE" name="GenericPaymentServiceEndpoint1Binding" type="wsdl" bindingName="{http://www.etisalat.ae/Middleware/BWTemplate/WebserviceName}GenericPaymentServiceEndpoint1Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/kinkar.sarkar/Downloads/GenericPaymentServiceEndpoint1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/kinkar.sarkar/Downloads/GenericPaymentServiceEndpoint1.wsdl"><con:part><con:url>file:/C:/Users/kinkar.sarkar/Downloads/GenericPaymentServiceEndpoint1.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://www.etisalat.ae/Middleware/BWTemplate/WebserviceName" xmlns:ns0="http://www.etisalat.ae/Middleware/GenericPaymentService/PaymentPostingRequest.xsd" xmlns:ns1="http://www.etisalat.ae/Middleware/GenericPaymentService/PaymentPostingResponse.xsd" xmlns:ns2="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:ns3="http://www.etisalat.ae/Middleware/GenericPaymentService/MiscPaymentRequest.xsd" xmlns:ns4="http://www.etisalat.ae/Middleware/GenericPaymentService/MiscPaymentResponse.xsd" xmlns:ns5="http://www.etisalat.ae/Middleware/GenericPaymentService/RenewalPaymentRequest.xsd" xmlns:ns6="http://www.etisalat.ae/Middleware/GenericPaymentService/RenewalPaymentResponse.xsd" xmlns:ns7="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.etisalat.ae/Middleware/BWTemplate/WebserviceName" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Version : 1.2
+Created by : MW Team 
+Last Updated By : Amit Samantaray
+Modified Date : 2016-08-02 
+Description: Zakat Payment</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.etisalat.ae/Middleware/GenericPaymentService/RenewalPaymentRequest.xsd" xmlns="http://www.etisalat.ae/Middleware/GenericPaymentService/RenewalPaymentRequest.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+      <xs:element name="AdditionalInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RenewalPaymentRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:ApplicationHeader"/>
+            <xs:element name="DataHeader">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AccountNumber" type="xs:string"/>
+                  <xs:element minOccurs="0" name="AccountHolderName" type="xs:string"/>
+                  <xs:element name="ProductGroupCode" type="xs:string"/>
+                  <xs:element name="ProductCode" type="xs:string"/>
+                  <xs:element name="AmountReceived" type="xs:double"/>
+                  <xs:element name="OrderType" type="xs:string"/>
+                  <xs:element minOccurs="0" name="PaymentMode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="ChannelTransactionDate" type="xs:string"/>
+                  <xs:element name="ExternalTransactionCode" type="xs:string"/>
+                  <xs:element name="CashierName" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CollectionLocationCode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CollectionLocationName" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CollectionRegionCode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="Currency" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CurrencyRate" type="xs:double"/>
+                  <xs:element name="PaymentType" type="xs:string"/>
+                  <xs:element minOccurs="0" name="ChannelType" type="xs:string"/>
+                  <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="Remarks" type="xs:string"/>
+                  <xs:element minOccurs="0" name="ChequeDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ChequeNumber" type="xs:string"/>
+                        <xs:element name="ChequeDate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankID" type="xs:long"/>
+                        <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankName" type="xs:string"/>
+                        <xs:element name="RegionCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Emirate" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns5:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="CardDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="CardNumber" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CardType" type="xs:string"/>
+                        <xs:element name="CardSubType" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CardToken" type="xs:string"/>
+                        <xs:element name="AuthorizationCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="InstallmentFlag" type="xs:int"/>
+                        <xs:element minOccurs="0" name="CardExpiryDate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="TerminalId" type="xs:string"/>
+                        <xs:element minOccurs="0" name="MerchantId" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankID" type="xs:long"/>
+                        <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankName" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns5:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="LoyaltyDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="LoyaltyNumber" type="xs:string"/>
+                        <xs:element name="LoyaltyPoints" type="xs:long"/>
+                        <xs:element name="ConversionRate" type="xs:double"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns5:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="BankAdviceDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ConversionRate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankID" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankName" type="xs:string"/>
+                        <xs:element minOccurs="0" name="AdviceDate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankAdviceRefNo" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns5:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="OtherPaymentTypes">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="PaymentType" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns5:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="FranchiseePayment">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="UserId" type="xs:string"/>
+                        <xs:element name="FranchiseeCode" type="xs:string"/>
+                        <xs:element name="MiscPurposeCode" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns5:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns5:AdditionalInfo"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.etisalat.ae/Middleware/GenericPaymentService/MiscPaymentResponse.xsd" xmlns="http://www.etisalat.ae/Middleware/GenericPaymentService/MiscPaymentResponse.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+      <xs:element name="AdditionalInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MiscPaymentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ResponseData">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="TransactionID" type="xs:string"/>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns4:AdditionalInfo"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element ref="ns0:AckMessage"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.etisalat.ae/Middleware/GenericPaymentService/PaymentPostingResponse.xsd" xmlns="http://www.etisalat.ae/Middleware/GenericPaymentService/PaymentPostingResponse.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+      <xs:element name="AdditionalInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PaymentPostingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ResponseData">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="TransactionID" type="xs:string"/>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns1:AdditionalInfo"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element ref="ns0:AckMessage"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.etisalat.ae/Middleware/GenericPaymentService/PaymentPostingRequest.xsd" xmlns="http://www.etisalat.ae/Middleware/GenericPaymentService/PaymentPostingRequest.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+      <xs:element name="AdditionalInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PaymentPostingRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:ApplicationHeader"/>
+            <xs:element name="DataHeader">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="PaidTotalAmount" type="xs:string"/>
+                  <xs:element minOccurs="0" name="PaymentModeCode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="IsCancelled" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CancellationDate" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CancellationReason" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CancellationRemarks" type="xs:string"/>
+                  <xs:element minOccurs="0" name="LinkPaymentTransactionCode" type="xs:string"/>
+                  <xs:element name="CashierName" type="xs:string"/>
+                  <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="Currency" type="xs:string"/>
+                  <xs:element name="PaymentType" type="xs:string"/>
+                  <xs:element minOccurs="0" name="Remarks" type="xs:string"/>
+                  <xs:element minOccurs="0" name="ChannelType" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CollectionLocationCode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CollectionLocationName" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CollectionRegionCode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CurrencyRate" type="xs:decimal"/>
+                  <xs:element name="ExternalTransactionCode" type="xs:string"/>
+                  <xs:element name="ChannelTransactionDate" type="xs:string"/>
+                  <xs:element minOccurs="0" name="ReferenceNo" type="xs:string"/>
+                  <xs:element minOccurs="0" name="PaymentAccepted" type="xs:string"/>
+                  <xs:element minOccurs="0" name="BulkPayment" type="xs:string"/>
+                  <xs:element minOccurs="0" name="PaymentProcessed" type="xs:string"/>
+                  <xs:element minOccurs="0" name="SMSNotification" type="xs:string"/>
+                  <xs:element minOccurs="0" name="EmailNotification" type="xs:string"/>
+                  <xs:element name="PaymentDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="AccountId" type="xs:long"/>
+                        <xs:element minOccurs="0" name="AccountNumber" type="xs:string"/>
+                        <xs:element minOccurs="0" name="AccountType" type="xs:string"/>
+                        <xs:element minOccurs="0" name="PaymentCategory" type="xs:string"/>
+                        <xs:element name="PaidAmount" type="xs:double"/>
+                        <xs:element minOccurs="0" name="PartyId" type="xs:long"/>
+                        <xs:element minOccurs="0" name="InvoiceNumber" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Remarks" type="xs:string"/>
+                        <xs:element minOccurs="0" name="RegionCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="DueAmount" type="xs:double"/>
+                        <xs:element minOccurs="0" name="CreditStatusID" type="xs:long"/>
+                        <xs:element name="TransactionType" type="xs:string"/>
+                        <xs:element minOccurs="0" name="AccountStatusCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="PaymentPurposeCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="ReferenceNumber" type="xs:string"/>
+                        <xs:element minOccurs="0" name="TopupCompleted" type="xs:string"/>
+                        <xs:element minOccurs="0" name="GLCode" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ChequeDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ChequeNumber" type="xs:string"/>
+                        <xs:element name="ChequeDate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankID" type="xs:long"/>
+                        <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankName" type="xs:string"/>
+                        <xs:element name="RegionCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Emirate" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="CardDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="CardNumber" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CardType" type="xs:string"/>
+                        <xs:element name="CardSubType" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CardToken" type="xs:string"/>
+                        <xs:element name="AuthorizationCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="InstallmentFlag" type="xs:int"/>
+                        <xs:element minOccurs="0" name="CardExpiryDate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="TerminalId" type="xs:string"/>
+                        <xs:element minOccurs="0" name="MerchantId" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankID" type="xs:long"/>
+                        <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankName" type="xs:string"/>
+                        <xs:element minOccurs="0" name="EPGTransactionID" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="LoyaltyDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="LoyaltyNumber" type="xs:string"/>
+                        <xs:element name="LoyaltyPoints" type="xs:long"/>
+                        <xs:element name="ConversionRate" type="xs:double"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="BankAdviceDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ConversionRate" type="xs:double"/>
+                        <xs:element minOccurs="0" name="BankID" type="xs:long"/>
+                        <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankName" type="xs:string"/>
+                        <xs:element minOccurs="0" name="AdviceDate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankAdviceRefNo" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="OtherPaymentTypes">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="PaymentType" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="FranchiseePayment">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="UserId" type="xs:string"/>
+                        <xs:element name="FranchiseeCode" type="xs:string"/>
+                        <xs:element name="MiscPurposeCode" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" ref="AdditionalInfo"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ApplicationHeader">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TransactionID" type="xs:string"/>
+            <xs:element name="RequestedSystem" type="xs:string"/>
+            <xs:element minOccurs="0" name="RetryLimit" type="xs:string"/>
+            <xs:element minOccurs="0" name="RequestedDate" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.etisalat.ae/Middleware/GenericPaymentService/MiscPaymentRequest.xsd" xmlns="http://www.etisalat.ae/Middleware/GenericPaymentService/MiscPaymentRequest.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd"/>
+      <xs:element name="AdditionalInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MiscPaymentRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ns0:ApplicationHeader"/>
+            <xs:element name="DataHeader">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="PaidTotalAmount" type="xs:double"/>
+                  <xs:element minOccurs="0" name="PaymentModeCode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="IsCancelled" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CancellationDate" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CancellationReason" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CancellationRemarks" type="xs:string"/>
+                  <xs:element minOccurs="0" name="LinkPaymentTransactionCode" type="xs:string"/>
+                  <xs:element name="CashierName" type="xs:string"/>
+                  <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="Currency" type="xs:string"/>
+                  <xs:element name="PaymentType" type="xs:string"/>
+                  <xs:element name="ExternalTransactionCode" type="xs:string"/>
+                  <xs:element name="ChannelTransactionDate" type="xs:string"/>
+                  <xs:element minOccurs="0" name="Remarks" type="xs:string"/>
+                  <xs:element minOccurs="0" name="ChannelType" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CollectionLocationCode" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CollectionLocationName" type="xs:string"/>
+                  <xs:element minOccurs="0" name="CollectionRegionCode" type="xs:string"/>
+                  <xs:element maxOccurs="unbounded" name="MiscPaymentDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Amount" type="xs:double"/>
+                        <xs:element minOccurs="0" name="ReferenceNumber" type="xs:string"/>
+                        <xs:element name="MiscPurposeCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BidderName" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns3:AdditionalInfo"/>
+                        <xs:element minOccurs="0" name="CardDenomination">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Denomination" type="xs:string"/>
+                              <xs:element name="NoOfUnit" type="xs:string"/>
+                              <xs:element name="DiscountPercentage" type="xs:double"/>
+                              <xs:element name="DiscountedAmount" type="xs:double"/>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns3:AdditionalInfo"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="ChequeDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ChequeNumber" type="xs:string"/>
+                        <xs:element name="ChequeDate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankID" type="xs:long"/>
+                        <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankName" type="xs:string"/>
+                        <xs:element name="RegionCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="Emirate" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns3:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="CardDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="CardNumber" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CardType" type="xs:string"/>
+                        <xs:element name="CardSubType" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CardToken" type="xs:string"/>
+                        <xs:element name="AuthorizationCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="InstallmentFlag" type="xs:int"/>
+                        <xs:element minOccurs="0" name="CardExpiryDate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="TerminalId" type="xs:string"/>
+                        <xs:element minOccurs="0" name="MerchantId" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankID" type="xs:long"/>
+                        <xs:element minOccurs="0" name="BankCode" type="xs:string"/>
+                        <xs:element minOccurs="0" name="BankName" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns3:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="LoyaltyDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="LoyaltyNumber" type="xs:string"/>
+                        <xs:element name="LoyaltyPoints" type="xs:long"/>
+                        <xs:element name="ConversionRate" type="xs:double"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns3:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="CashierShiftDetails">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="CashierUsername" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CashierShiftStartDate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CashierShiftEndDate" type="xs:string"/>
+                        <xs:element minOccurs="0" name="CashierLocation" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns3:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="OtherPaymentTypes">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="PaymentType" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns3:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="FranchiseePayment">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="UserId" type="xs:string"/>
+                        <xs:element name="FranchiseeCode" type="xs:string"/>
+                        <xs:element name="MiscPurposeCode" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns3:AdditionalInfo"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns3:AdditionalInfo"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.etisalat.ae/Middleware/GenericPaymentService/RenewalPaymentResponse.xsd" xmlns="http://www.etisalat.ae/Middleware/GenericPaymentService/RenewalPaymentResponse.xsd" xmlns:ns0="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd"/>
+      <xs:element name="AdditionalInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RenewalPaymentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ResponseData">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="TransactionID" type="xs:string"/>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" ref="ns6:AdditionalInfo"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element ref="ns0:AckMessage"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="AckMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Status">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="SUCCESS"/>
+                  <xs:enumeration value="FAILURE"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element minOccurs="0" name="ErrorCode" type="xs:string"/>
+            <xs:element minOccurs="0" name="ErrorType" type="xs:string"/>
+            <xs:element minOccurs="0" name="ErrorDescription" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="GenericPaymentService">
+    <wsdl:port binding="tns:GenericPaymentServiceEndpoint1Binding" name="GenericPaymentServiceEndpoint1">
+      <soap:address location="http://localhost:8080/tibco-payment/services/GenericPaymentServiceEndpoint1"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="GenericPaymentService">
+    <wsdl:operation name="opPaymentPosting">
+      <wsdl:input message="tns:PaymentPostingRequest"/>
+      <wsdl:output message="tns:PaymentPostingResponse"/>
+      <wsdl:fault message="tns:PaymentFault" name="fault1"/>
+    </wsdl:operation>
+    <wsdl:operation name="opMiscPayment">
+      <wsdl:input message="tns:MiscPaymentRequest"/>
+      <wsdl:output message="tns:MiscPaymentResponse"/>
+      <wsdl:fault message="tns:PaymentFault" name="fault1"/>
+    </wsdl:operation>
+    <wsdl:operation name="opRenewalPayment">
+      <wsdl:input message="tns:RenewalPaymentRequest"/>
+      <wsdl:output message="tns:RenewalPaymentResponse"/>
+      <wsdl:fault message="tns:PaymentFault" name="fault1"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GenericPaymentServiceEndpoint1Binding" type="tns:GenericPaymentService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="opPaymentPosting">
+      <soap:operation soapAction="/Middleware/GenericPaymentService/PaymentPosting" style="document"/>
+      <wsdl:input>
+        <soap:body parts="PaymentPostingRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="PaymentPostingResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault name="fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="opMiscPayment">
+      <soap:operation soapAction="/Middleware/GenericPaymentService/MiscPayment" style="document"/>
+      <wsdl:input>
+        <soap:body parts="MiscPaymentRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="MiscPaymentResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault name="fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="opRenewalPayment">
+      <soap:operation soapAction="/Middleware/GenericPaymentService/RenewalPayment" style="document"/>
+      <wsdl:input>
+        <soap:body parts="RenewalPaymentRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="RenewalPaymentResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault1">
+        <soap:fault name="fault1" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="PaymentPostingRequest">
+    <wsdl:part element="ns0:PaymentPostingRequest" name="PaymentPostingRequest"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentPostingResponse">
+    <wsdl:part element="ns1:PaymentPostingResponse" name="PaymentPostingResponse"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentFault">
+    <wsdl:part element="ns2:AckMessage" name="PaymentFault"/>
+  </wsdl:message>
+  <wsdl:message name="MiscPaymentRequest">
+    <wsdl:part element="ns3:MiscPaymentRequest" name="MiscPaymentRequest"/>
+  </wsdl:message>
+  <wsdl:message name="MiscPaymentResponse">
+    <wsdl:part element="ns4:MiscPaymentResponse" name="MiscPaymentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="RenewalPaymentRequest">
+    <wsdl:part element="ns5:RenewalPaymentRequest" name="RenewalPaymentRequest"/>
+  </wsdl:message>
+  <wsdl:message name="RenewalPaymentResponse">
+    <wsdl:part element="ns6:RenewalPaymentResponse" name="RenewalPaymentResponse"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://P2BLAP-7SM4FH2:8088/mockGenericPaymentServiceEndpoint1Binding</con:endpoint><con:endpoint>http://localhost:8080/tibco-payment/services/GenericPaymentServiceEndpoint1</con:endpoint></con:endpoints><con:operation id="7ab0f88f-c2fd-4cc7-a92f-3a3d728dd04d" isOneWay="false" action="/Middleware/GenericPaymentService/MiscPayment" name="opMiscPayment" bindingOperationName="opMiscPayment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation id="85283f02-372b-4f05-b79a-4398a09cc06b" isOneWay="false" action="/Middleware/GenericPaymentService/PaymentPosting" name="opPaymentPosting" bindingOperationName="opPaymentPosting" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation id="5388b461-8b13-4fa4-986e-21dff84607f7" isOneWay="false" action="/Middleware/GenericPaymentService/RenewalPayment" name="opRenewalPayment" bindingOperationName="opRenewalPayment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:testSuite id="54a5c7b2-6d93-4c74-98e8-ffec78349974" name="GenericPaymentServiceEndpoint1Binding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="2cdac822-9b21-4b3f-943d-7ff57c87fa45" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="opPaymentPosting TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="ad11328a-34ee-42e4-9922-428639d0b720" name="Payment Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GenericPaymentServiceEndpoint1Binding</con:interface><con:operation>opPaymentPosting</con:operation><con:request name="Payment Request" id="b42e5b80-e038-41a2-a4de-ff816537042a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/tibco-payment/services/GenericPaymentServiceEndpoint1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.etisalat.ae/Middleware/GenericPaymentService/PaymentPostingRequest.xsd" xmlns:app="http://www.etisalat.ae/Middleware/SharedResources/Common/ApplicationHeader.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pay:PaymentPostingRequest>\r
+         <app:ApplicationHeader>\r
+            <app:TransactionID>1234</app:TransactionID>\r
+            <app:RequestedSystem>2345</app:RequestedSystem>\r
+            <!--Optional:-->\r
+            <app:RetryLimit>?</app:RetryLimit>\r
+            <!--Optional:-->\r
+            <app:RequestedDate>?</app:RequestedDate>\r
+         </app:ApplicationHeader>\r
+         <pay:DataHeader>\r
+            <!--Optional:-->\r
+            <pay:PaidTotalAmount>?</pay:PaidTotalAmount>\r
+            <!--Optional:-->\r
+            <pay:PaymentModeCode>?</pay:PaymentModeCode>\r
+            <!--Optional:-->\r
+            <pay:IsCancelled>?</pay:IsCancelled>\r
+            <!--Optional:-->\r
+            <pay:CancellationDate>?</pay:CancellationDate>\r
+            <!--Optional:-->\r
+            <pay:CancellationReason>?</pay:CancellationReason>\r
+            <!--Optional:-->\r
+            <pay:CancellationRemarks>?</pay:CancellationRemarks>\r
+            <!--Optional:-->\r
+            <pay:LinkPaymentTransactionCode>?</pay:LinkPaymentTransactionCode>\r
+            <pay:CashierName>?</pay:CashierName>\r
+            <!--Optional:-->\r
+            <pay:BankCode>?</pay:BankCode>\r
+            <!--Optional:-->\r
+            <pay:Currency>?</pay:Currency>\r
+            <pay:PaymentType>?</pay:PaymentType>\r
+            <!--Optional:-->\r
+            <pay:Remarks>?</pay:Remarks>\r
+            <!--Optional:-->\r
+            <pay:ChannelType>?</pay:ChannelType>\r
+            <!--Optional:-->\r
+            <pay:CollectionLocationCode>?</pay:CollectionLocationCode>\r
+            <!--Optional:-->\r
+            <pay:CollectionLocationName>?</pay:CollectionLocationName>\r
+            <!--Optional:-->\r
+            <pay:CollectionRegionCode>?</pay:CollectionRegionCode>\r
+            <!--Optional:-->\r
+            <pay:CurrencyRate>?</pay:CurrencyRate>\r
+            <pay:ExternalTransactionCode>4567</pay:ExternalTransactionCode>\r
+            <pay:ChannelTransactionDate>3456</pay:ChannelTransactionDate>\r
+            <!--Optional:-->\r
+            <pay:ReferenceNo>?</pay:ReferenceNo>\r
+            <!--Optional:-->\r
+            <pay:PaymentAccepted>?</pay:PaymentAccepted>\r
+            <!--Optional:-->\r
+            <pay:BulkPayment>?</pay:BulkPayment>\r
+            <!--Optional:-->\r
+            <pay:PaymentProcessed>?</pay:PaymentProcessed>\r
+            <!--Optional:-->\r
+            <pay:SMSNotification>?</pay:SMSNotification>\r
+            <!--Optional:-->\r
+            <pay:EmailNotification>?</pay:EmailNotification>\r
+            <pay:PaymentDetails>\r
+               <!--Optional:-->\r
+               <pay:AccountId>?</pay:AccountId>\r
+               <!--Optional:-->\r
+               <pay:AccountNumber>?</pay:AccountNumber>\r
+               <!--Optional:-->\r
+               <pay:AccountType>?</pay:AccountType>\r
+               <!--Optional:-->\r
+               <pay:PaymentCategory>?</pay:PaymentCategory>\r
+               <pay:PaidAmount>34567</pay:PaidAmount>\r
+               <!--Optional:-->\r
+               <pay:PartyId>?</pay:PartyId>\r
+               <!--Optional:-->\r
+               <pay:InvoiceNumber>?</pay:InvoiceNumber>\r
+               <!--Optional:-->\r
+               <pay:Remarks>?</pay:Remarks>\r
+               <!--Optional:-->\r
+               <pay:RegionCode>?</pay:RegionCode>\r
+               <!--Optional:-->\r
+               <pay:DueAmount>?</pay:DueAmount>\r
+               <!--Optional:-->\r
+               <pay:CreditStatusID>?</pay:CreditStatusID>\r
+               <pay:TransactionType>CC</pay:TransactionType>\r
+               <!--Optional:-->\r
+               <pay:AccountStatusCode>?</pay:AccountStatusCode>\r
+               <!--Optional:-->\r
+               <pay:PaymentPurposeCode>?</pay:PaymentPurposeCode>\r
+               <!--Optional:-->\r
+               <pay:ReferenceNumber>?</pay:ReferenceNumber>\r
+               <!--Optional:-->\r
+               <pay:TopupCompleted>?</pay:TopupCompleted>\r
+               <!--Optional:-->\r
+               <pay:GLCode>?</pay:GLCode>\r
+               <!--Zero or more repetitions:-->\r
+               <pay:AdditionalInfo>\r
+                  <pay:Name>?</pay:Name>\r
+                  <pay:Value>?</pay:Value>\r
+               </pay:AdditionalInfo>\r
+            </pay:PaymentDetails>\r
+            <!--Optional:-->\r
+            <pay:ChequeDetails>\r
+               <pay:ChequeNumber>?</pay:ChequeNumber>\r
+               <pay:ChequeDate>?</pay:ChequeDate>\r
+               <!--Optional:-->\r
+               <pay:BankID>?</pay:BankID>\r
+               <!--Optional:-->\r
+               <pay:BankCode>?</pay:BankCode>\r
+               <!--Optional:-->\r
+               <pay:BankName>?</pay:BankName>\r
+               <pay:RegionCode>?</pay:RegionCode>\r
+               <!--Optional:-->\r
+               <pay:Emirate>?</pay:Emirate>\r
+               <!--Zero or more repetitions:-->\r
+               <pay:AdditionalInfo>\r
+                  <pay:Name>?</pay:Name>\r
+                  <pay:Value>?</pay:Value>\r
+               </pay:AdditionalInfo>\r
+            </pay:ChequeDetails>\r
+            <!--Optional:-->\r
+            <pay:CardDetails>\r
+               <!--Optional:-->\r
+               <pay:CardNumber>?</pay:CardNumber>\r
+               <!--Optional:-->\r
+               <pay:CardType>?</pay:CardType>\r
+               <pay:CardSubType>?</pay:CardSubType>\r
+               <!--Optional:-->\r
+               <pay:CardToken>?</pay:CardToken>\r
+               <pay:AuthorizationCode>?</pay:AuthorizationCode>\r
+               <!--Optional:-->\r
+               <pay:InstallmentFlag>?</pay:InstallmentFlag>\r
+               <!--Optional:-->\r
+               <pay:CardExpiryDate>?</pay:CardExpiryDate>\r
+               <!--Optional:-->\r
+               <pay:TerminalId>?</pay:TerminalId>\r
+               <!--Optional:-->\r
+               <pay:MerchantId>?</pay:MerchantId>\r
+               <!--Optional:-->\r
+               <pay:BankID>?</pay:BankID>\r
+               <!--Optional:-->\r
+               <pay:BankCode>?</pay:BankCode>\r
+               <!--Optional:-->\r
+               <pay:BankName>?</pay:BankName>\r
+               <!--Optional:-->\r
+               <pay:EPGTransactionID>?</pay:EPGTransactionID>\r
+               <!--Zero or more repetitions:-->\r
+               <pay:AdditionalInfo>\r
+                  <pay:Name>?</pay:Name>\r
+                  <pay:Value>?</pay:Value>\r
+               </pay:AdditionalInfo>\r
+            </pay:CardDetails>\r
+            <!--Optional:-->\r
+            <pay:LoyaltyDetails>\r
+               <pay:LoyaltyNumber>?</pay:LoyaltyNumber>\r
+               <pay:LoyaltyPoints>?</pay:LoyaltyPoints>\r
+               <pay:ConversionRate>?</pay:ConversionRate>\r
+               <!--Zero or more repetitions:-->\r
+               <pay:AdditionalInfo>\r
+                  <pay:Name>?</pay:Name>\r
+                  <pay:Value>?</pay:Value>\r
+               </pay:AdditionalInfo>\r
+            </pay:LoyaltyDetails>\r
+            <!--Optional:-->\r
+            <pay:BankAdviceDetails>\r
+               <pay:ConversionRate>?</pay:ConversionRate>\r
+               <!--Optional:-->\r
+               <pay:BankID>?</pay:BankID>\r
+               <!--Optional:-->\r
+               <pay:BankCode>?</pay:BankCode>\r
+               <!--Optional:-->\r
+               <pay:BankName>?</pay:BankName>\r
+               <!--Optional:-->\r
+               <pay:AdviceDate>?</pay:AdviceDate>\r
+               <!--Optional:-->\r
+               <pay:BankAdviceRefNo>?</pay:BankAdviceRefNo>\r
+               <!--Zero or more repetitions:-->\r
+               <pay:AdditionalInfo>\r
+                  <pay:Name>?</pay:Name>\r
+                  <pay:Value>?</pay:Value>\r
+               </pay:AdditionalInfo>\r
+            </pay:BankAdviceDetails>\r
+            <!--Optional:-->\r
+            <pay:OtherPaymentTypes>\r
+               <!--Optional:-->\r
+               <pay:PaymentType>?</pay:PaymentType>\r
+               <!--Zero or more repetitions:-->\r
+               <pay:AdditionalInfo>\r
+                  <pay:Name>?</pay:Name>\r
+                  <pay:Value>?</pay:Value>\r
+               </pay:AdditionalInfo>\r
+            </pay:OtherPaymentTypes>\r
+            <!--Optional:-->\r
+            <pay:FranchiseePayment>\r
+               <pay:UserId>?</pay:UserId>\r
+               <pay:FranchiseeCode>?</pay:FranchiseeCode>\r
+               <pay:MiscPurposeCode>?</pay:MiscPurposeCode>\r
+               <!--Zero or more repetitions:-->\r
+               <pay:AdditionalInfo>\r
+                  <pay:Name>?</pay:Name>\r
+                  <pay:Value>?</pay:Value>\r
+               </pay:AdditionalInfo>\r
+            </pay:FranchiseePayment>\r
+            <!--Zero or more repetitions:-->\r
+            <pay:AdditionalInfo>\r
+               <pay:Name>?</pay:Name>\r
+               <pay:Value>?</pay:Value>\r
+            </pay:AdditionalInfo>\r
+         </pay:DataHeader>\r
+      </pay:PaymentPostingRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="/Middleware/GenericPaymentService/PaymentPosting" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService id="813aef91-0dba-4527-bba1-de8635791d0d" port="8088" path="/mockGenericPaymentServiceEndpoint1Binding" host="P2BLAP-7SM4FH2" name="GenericPaymentServiceEndpoint1Binding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties><con:property><con:name>version</con:name><con:value>1.0</con:value></con:property></con:properties><con:mockOperation name="opPaymentPosting" id="548763b5-2c11-4d8f-94bb-d31197319d04" interface="GenericPaymentServiceEndpoint1Binding" operation="opPaymentPosting"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>XPATH</con:dispatchStyle><con:response name="Payment Response" id="d32ff06e-6e04-43ae-818c-ed5cc36ac7eb" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pay="http://www.etisalat.ae/Middleware/GenericPaymentService/PaymentPostingResponse.xsd" xmlns:ack="http://www.etisalat.ae/Middleware/SharedResources/Common/AckMessage.xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pay:PaymentPostingResponse>
+         <!--Optional:-->
+         <pay:ResponseData>
+            <!--Optional:-->
+            <pay:TransactionID>1234</pay:TransactionID>
+            <!--Zero or more repetitions:-->
+            <pay:AdditionalInfo>
+               <pay:Name>?</pay:Name>
+               <pay:Value>?</pay:Value>
+            </pay:AdditionalInfo>
+         </pay:ResponseData>
+         <ack:AckMessage>
+            <ack:Status>Success</ack:Status>
+            <!--Optional:-->
+            <ack:ErrorCode>?</ack:ErrorCode>
+            <!--Optional:-->
+            <ack:ErrorType>?</ack:ErrorType>
+            <!--Optional:-->
+            <ack:ErrorDescription>?</ack:ErrorDescription>
+         </ack:AckMessage>
+      </pay:PaymentPostingResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="/Middleware/GenericPaymentService/PaymentPosting"/></con:response><con:dispatchConfig xsi:type="con:MockOperationQueryMatchDispatch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:mockOperation></con:mockService><con:properties><con:property><con:name>version</con:name><con:value>1.0</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
